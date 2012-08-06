@@ -14,7 +14,7 @@ module ActionView
       #
       # NOTE: Only the option tags are returned, you have to wrap this call in a regular HTML select tag.
       def country_options_for_select(selected = nil, priority_countries = nil)
-        country_options = ""
+        country_options = "".html_safe
 
         if priority_countries
           country_options += options_for_select(priority_countries, selected)
