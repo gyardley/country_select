@@ -1,3 +1,14 @@
+Preamble
+========
+
+This version of Michael Koziarski's CountrySelect has been modified and packaged as a gem. The list of countries no longer matches the ISO 3166 standard. 
+
+(The choices I have made will also offend some users. You should decide on your own country list, tailored for your own audience.)
+
+Since I don't know what I'm supposed to do with previous README files, I've left an earlier README below.
+
+- Greg Yardley
+
 CountrySelect
 =============
 
@@ -5,10 +16,34 @@ Provides a simple helper to get an HTML select list of countries.  The list of c
 
 Users are strongly advised to evaluate the suitability of this list given their user base.
 
-Example
-=======
+## Installation
 
-country_select("user", "country_name")
+Install as a gem using
 
+    gem install country-select
+
+Or put the following in your Gemfile
+
+    gem 'country-select'
+
+## Example
+
+Simple use supplying model and attribute as parameters:
+
+    country_select("user", "country_name")
+
+Supplying priority countries to be placed at the top of the list:
+
+    country_select("user", "country_name", [ "United Kingdom", "France", "Germany" ])
+
+Specifying which country to be selected:
+United Kingdom will be selected.
+country_select("user", "country_name", [ "+United Kingdom+", "France", "Germany" ])
+
+Example in a Rails form:
+Full list, with New Zealand Australia and United Kingdom prioritized (New Zealand selected
+by default)
+<%= country_select(:player, :nationality, [ "+New Zealand+", "Australia", "United Kingdom" ])
+%>
 
 Copyright (c) 2008 Michael Koziarski, released under the MIT license

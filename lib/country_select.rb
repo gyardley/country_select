@@ -1,4 +1,6 @@
 # CountrySelect
+require 'country_select/version'
+
 module ActionView
   module Helpers
     module FormOptionsHelper
