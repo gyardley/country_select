@@ -1,11 +1,8 @@
 # CountrySelect
-<<<<<<< HEAD
-=======
 #
 # Adds #country_select method to
 # ActionView::FormBuilder
 #
->>>>>>> upstream/master
 require 'country_select/version'
 
 module ActionView
